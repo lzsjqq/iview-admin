@@ -218,6 +218,35 @@ export default [
     ]
   },
   {
+    path: '/shares',
+    name: 'shares',
+    meta: {
+      icon: 'logo-buffer',
+      title: '股票'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'share',
+        name: 'share',
+        meta: {
+          icon: 'md-git-branch',
+          title: '树状表格'
+        },
+        component: () => import('@/view/components/share/index.vue')
+      },
+      {
+        path: 'share_chare',
+        name: 'share_chare',
+        meta: {
+          icon: 'md-git-branch',
+          title: '树状表格'
+        },
+        component: () => import('@/view/components/tree-table/index.vue')
+      }
+    ]
+  },
+  {
     path: '/update',
     name: 'update',
     meta: {
