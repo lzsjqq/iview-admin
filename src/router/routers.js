@@ -227,6 +227,15 @@ export default [
     component: Main,
     children: [
       {
+        path: 'deal',
+        name: 'deal',
+        meta: {
+          icon: 'md-git-branch',
+          title: '树状表格'
+        },
+        component: () => import('@/view/components/deal/index.vue')
+      },
+      {
         path: 'share',
         name: 'share',
         meta: {
@@ -235,6 +244,7 @@ export default [
         },
         component: () => import('@/view/components/share/index.vue')
       },
+
       {
         path: 'share_chare',
         name: 'share_chare',
