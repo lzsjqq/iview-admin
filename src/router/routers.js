@@ -236,6 +236,15 @@ export default [
         component: () => import('@/view/components/deal/index.vue')
       },
       {
+        path: 'deal_detail',
+        name: 'deal_detail',
+        meta: {
+          icon: 'md-git-branch',
+          title: '树状表格'
+        },
+        component: () => import('@/view/components/deal_detail/index.vue')
+      },
+      {
         path: 'share',
         name: 'share',
         meta: {
