@@ -7,3 +7,9 @@ export const post = (formItem, url) => {
     data: formItem
   })
 }
+export const get = (url) => {
+  return axios.request({
+    url: url,
+    method: 'get',
+  })
+}

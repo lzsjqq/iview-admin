@@ -25,7 +25,7 @@
             </Select>
           </FormItem>
           <FormItem label="计划">
-            <Input v-model="insertFormItem.paln" type="textarea" placeholder="请输入计划..."/>
+            <Input v-model="insertFormItem.plan" type="textarea" placeholder="请输入计划..."/>
           </FormItem>
         </Form>
       </Modal>
@@ -51,7 +51,7 @@
 
 <script>
 import Tables from '_c/tables'
-import { post } from './shareData'
+import { post, get } from '@/libs/http'
 import { getDateStr } from '@/api/date'
 export default {
   name: 'tables_page',
@@ -80,7 +80,7 @@ export default {
         stopLossPrice: '',
         volume: '',
         target: '',
-        paln: ''
+        plan: ''
       },
       addInsert: false,
       // 总页数
@@ -180,6 +180,10 @@ export default {
 
   mounted: function () {
     this.search()
+    get('common/dicOne?dicCode=plan').then(res => {
+      let dicOne = res.data
+      this.insertFormItem.plan = dicOne.codeValue
+    })
   }
 }
 </script>
