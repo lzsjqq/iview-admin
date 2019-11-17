@@ -25,7 +25,7 @@
             </Select>
           </FormItem>
           <FormItem label="计划">
-            <Input v-model="insertFormItem.plan" type="textarea" placeholder="请输入计划..."/>
+            <Input v-model="insertFormItem.plan"  style="width: 430px" :rows="4" type="textarea" placeholder="请输入计划..."/>
           </FormItem>
         </Form>
       </Modal>
@@ -90,6 +90,7 @@ export default {
       // 每页条数
       endRow: 10,
       columns: [
+        { title: '计划代码', key: 'idDealInfo', width: 100 },
         { title: '成交日期',
           key: 'tradingDate',
           width: 100,
