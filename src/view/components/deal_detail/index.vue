@@ -44,7 +44,17 @@ export default {
       // 每页条数
       endRow: 10,
       columns: [
-        { title: '日期', key: 'tradingDate', width: 100 },
+        { title: '日期', key: 'tradingDate', width: 100 ,
+            render: (h, params) => {
+                return h('div', [
+                    h('span', {
+                        props: {
+                            type: 'text',
+                            size: 'small'
+                        }
+                    }, getDateStr(params.row.tradingDate, 'simple'))
+                ])
+        }},
         { title: '股票名称', key: 'shareName', width: 100 },
         { title: '股票代码', key: 'shareCode', width: 100 },
         { title: '止损价', key: 'stopLossPrice', width: 100 },
