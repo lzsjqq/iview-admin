@@ -1,8 +1,8 @@
 import axios from '@/libs/api.request'
 
-export const getTableData = (formItem) => {
+export const post = (formItem, url) => {
   return axios.request({
-    url: 'deal/dealDetailInfo',
+    url: url,
     method: 'post',
     data: formItem
   })
