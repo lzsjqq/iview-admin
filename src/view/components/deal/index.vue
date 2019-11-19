@@ -70,8 +70,29 @@ export default {
         { title: '计划代码', key: 'idDealInfo', width: 80 },
         { title: '股票名称', key: 'shareName', width: 100, className: 'demo-table-info-column' },
         { title: '股票代码', key: 'shareCode', width: 100 },
-        { title: '止损价', key: 'stopLossPrice', width: 100 },
-        { title: '买入价格', key: 'dealPrice', width: 100 },
+        { title: '剩余数量', key: 'volume', width: 100 },
+        { title: '止损价', key: 'stopLossPrice', width: 100 , className: 'demo-table-info-cell-age',
+            render: (h, params) => {
+                if (params.row.$isEdit) {
+                    return h('input', {
+                        domProps: {
+                            value: params.row.stopLossPrice
+                        },
+                        style: {
+                            width: '60px'
+                        },
+                        on: {
+                            input: function (event) {
+                                params.row.stopLossPrice = event.target.value
+                            }
+                        }
+                    })
+                } else {
+                    return h('div', params.row.stopLossPrice)
+                }
+            }
+        },
+        { title: '成本价', key: 'firstCost', width: 100 },
         { title: '卖出价格', key: 'sellPrice', width: 100 },
         { title: '收益', key: 'profit', width: 100 },
         { title: '计划',
@@ -120,7 +141,7 @@ export default {
             }
           }
         },
-        { title: '复盘', key: 'analyse', width: 100 },
+        // { title: '复盘', key: 'analyse', width: 100 },
         { title: '期间最低价',
           key: 'lowPrice',
           width: 100,

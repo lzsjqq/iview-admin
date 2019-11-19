@@ -227,6 +227,15 @@ export default [
     component: Main,
     children: [
       {
+        path: 'event',
+        name: 'event',
+        meta: {
+          icon: 'md-git-branch',
+          title: '树状表格'
+        },
+        component: () => import('@/view/components/deal/event.vue')
+      },
+      {
         path: 'deal',
         name: 'deal',
         meta: {
